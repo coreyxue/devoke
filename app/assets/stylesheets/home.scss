@@ -1,3 +1,27 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.chart{
+	height:300px;
+	width:60%;
+	background-color: #D3D0D0;
+	margin-left:20%;
+	margin-top:10px;
+	background-image: url("fakeChart.png");
+	border-style:solid;
+}
+#check{
+	position: fixed;
+	margin-left: 82%;
+}
+h2{
+	margin-left:15%;
+}
+.updates{
+	margin-left:15%;
+}
+.updates div{
+	background-color: #D3D0D0;
+	height:150px;
+	width:85%;
+}
