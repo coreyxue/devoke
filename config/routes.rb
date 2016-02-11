@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/index'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -7,6 +6,13 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  get '/users/:user_id/profile', to: 'user_information#show', as: 'profile'
+
+  get '/users/profile_new', to: 'user_information#new', as: 'profile_new'
+  get '/users/profile_edit', to: 'user_information#edit', as: 'profile_edit'
+  post '/users/profile_create', to: 'user_information#create', as: 'profile_create'
+  patch '/user/profile_update', to: 'user_information#update', as: 'profile_update'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

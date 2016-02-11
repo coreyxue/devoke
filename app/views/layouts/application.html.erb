@@ -8,6 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%= link_to 'sign in', new_user_session_path %>
+	<%= link_to 'sign out', destroy_user_session_path, :method=>:delete%>
 	<div class="header">
 		<img class="icon" src="../../assets/icon.jpg">
 		<p class="header_verse"></p>

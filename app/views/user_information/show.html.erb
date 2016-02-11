@@ -1,0 +1,8 @@
+<% if not @user_infor.nil? %>
+	<p>Name: <%= @user_infor.name %></p>
+	<p>age: <%= @user_infor.age %></p>
+	<p>gender: <%= @user_infor.gender %></p>
+	<%= link_to 'Update your information', profile_edit_path%>
+<% else %>
+	<%= link_to 'Enter your information', profile_new_path%>
+<% end %>
