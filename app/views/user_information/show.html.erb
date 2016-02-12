@@ -6,3 +6,5 @@
 <% else %>
 	<%= link_to 'Enter your information', profile_new_path%>
 <% end %>
+<%= link_to 'my check ins', checkins_index_path(Time.now.year, Time.now.month) %>
+<%= link_to 'check in', checkins_create_path, :method=>:post%>

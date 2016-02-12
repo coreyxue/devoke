@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'checkins/index/:year/:month', to: 'checkins#index', as: 'checkins_index'
+  post 'checkins/create'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
 
   get '/users/:user_id/profile', to: 'user_information#show', as: 'profile'
 
