@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  resource 'posts'
+
+  get 'redemption/index', as: 'redemption_history'
+
+  post 'redemption/create/:reward_id', to: 'redemption#create', as: 'create_redemption'
+
+  get 'rewards', to: 'reward#index', as: 'reward_index'
+  get 'reward/show/:id', to: 'reward#show', as: 'reward_show'
+
   get 'checkins/index/:year/:month', to: 'checkins#index', as: 'checkins_index'
   post 'checkins/create'
 

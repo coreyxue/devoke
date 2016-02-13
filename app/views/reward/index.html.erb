@@ -1,0 +1,6 @@
+<h1>Reward#index</h1>
+<% @rewards.each do |reward| %>
+	</br>
+	<%= link_to reward.name, reward_show_path(reward.id) %>
+	<%= reward.description %>
+<% end %>

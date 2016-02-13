@@ -1,0 +1,10 @@
+<h1>Redemption#index</h1>
+<% if @redemptions.size != 0 %>
+	<% @redemptions.each do |redemption| %>
+		<%= redemption.time %>
+		<%= redemption.user_id %>
+		<%= redemption.reward_id %>
+	<% end %>
+<% else %>
+	没有历史
+<% end %>

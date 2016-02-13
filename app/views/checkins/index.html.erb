@@ -2,3 +2,4 @@
 <% for checkin in @checkins %>
 	<%= checkin.date %></br>
 <% end %>
+<%= link_to 'back', profile_path(current_user) %>

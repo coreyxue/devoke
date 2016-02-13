@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160212023611) do
+ActiveRecord::Schema.define(version: 20160213040205) do
 
   create_table "checkins", force: :cascade do |t|
     t.date     "date"
@@ -23,13 +23,44 @@ ActiveRecord::Schema.define(version: 20160212023611) do
 
   add_index "checkins", ["user_id"], name: "index_checkins_on_user_id", using: :btree
 
+  create_table "posts", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4,                  null: false
+    t.integer  "mood",       limit: 4,     default: -1
+    t.text     "message",    limit: 65535,              null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "redemptions", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4, null: false
+    t.integer  "reward_id",  limit: 4, null: false
+    t.datetime "time",                 null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "redemptions", ["reward_id"], name: "index_redemptions_on_reward_id", using: :btree
+  add_index "redemptions", ["user_id"], name: "index_redemptions_on_user_id", using: :btree
+
+  create_table "rewards", force: :cascade do |t|
+    t.string   "name",        limit: 255,               null: false
+    t.text     "description", limit: 65535
+    t.integer  "cost",        limit: 4,     default: 0, null: false
+    t.integer  "amount",      limit: 4,     default: 0, null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
   create_table "user_informations", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.integer  "user_id",    limit: 4
     t.integer  "age",        limit: 4
     t.string   "gender",     limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.integer  "credit",     limit: 4,   default: 0, null: false
   end
 
   add_index "user_informations", ["user_id"], name: "index_user_informations_on_user_id", using: :btree
@@ -53,5 +84,8 @@ ActiveRecord::Schema.define(version: 20160212023611) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "checkins", "users"
+  add_foreign_key "posts", "users"
+  add_foreign_key "redemptions", "rewards"
+  add_foreign_key "redemptions", "users"
   add_foreign_key "user_informations", "users"
 end

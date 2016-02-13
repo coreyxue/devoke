@@ -11,7 +11,7 @@
 	<%= link_to 'sign in', new_user_session_path %>
 	<%= link_to 'sign out', destroy_user_session_path, :method=>:delete%>
 	<div class="header">
-		<img class="icon" src="../../assets/icon.jpg">
+		<%= image_tag 'icon.jpg', :class => 'icon' %>
 		<p class="header_verse"></p>
 	</div>
 	<div class="sidebar">
