@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  obj_type: MyString
+  obj_id: 1
+  time: 2016-02-14 23:21:17
+  message: MyText
+  user_id: 
+
+two:
+  obj_type: MyString
+  obj_id: 1
+  time: 2016-02-14 23:21:17
+  message: MyText
+  user_id: 

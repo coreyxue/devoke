@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+</br>
+	<%= post.mood %>
+	<%= post.message %>
+	<%= link_to 'edit', edit_post_path(post) %>
+	<%= link_to 'delete', post_path(post), :method=>:delete %>
+<% end %>

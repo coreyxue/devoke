@@ -10,6 +10,7 @@ class CheckinsController < ApplicationController
   	current_user.checkins.create(:date=>Date.today, :time=>DateTime.now)
   	current_user.user_information.increment(:credit, by = 1)
   	current_user.user_information.save
+    create_changelog()
 
   	redirect_to checkins_index_path Time.now.year, Time.now.month
   end

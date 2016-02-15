@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
-  resource 'posts'
+  #resources :users do
+  resources :posts
+  #end
 
-  get 'redemption/index', as: 'redemption_history'
+  #get 'posts', to: 'posts#show', as: 'posts'
+  #get 'posts/new', to: 'posts#new', as: 'new_posts'
+  #post 'post/create', to: 'posts#create', as: 'post_create'
+  #get 'post/edit/:id', to: 'posts#edit', as: 'post_edit'
+  #patch 'post/update/:id', as: 'post_update'
+  #delete 'post/delete/:id', as: 'post_delete'
+
+  get 'redemptions', to: 'redemption#index', as: 'redemption_history'
 
   post 'redemption/create/:reward_id', to: 'redemption#create', as: 'create_redemption'
 

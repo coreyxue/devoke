@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160213040205) do
+ActiveRecord::Schema.define(version: 20160215072117) do
+
+  create_table "changelogs", force: :cascade do |t|
+    t.string   "obj_type",   limit: 255,   null: false
+    t.integer  "obj_id",     limit: 4,     null: false
+    t.datetime "time",                     null: false
+    t.text     "message",    limit: 65535, null: false
+    t.integer  "user_id",    limit: 4,     null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "changelogs", ["user_id"], name: "index_changelogs_on_user_id", using: :btree
 
   create_table "checkins", force: :cascade do |t|
     t.date     "date"
@@ -83,6 +95,7 @@ ActiveRecord::Schema.define(version: 20160213040205) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "changelogs", "users"
   add_foreign_key "checkins", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "redemptions", "rewards"

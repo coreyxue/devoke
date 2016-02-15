@@ -3,9 +3,10 @@
 <div class="chart"></div>
 <h2>最新動態</h2>
 <div class="updates">
-	<% 10.times do |i| %>
+	<% recent_changelogs(10).each do |change| %>
 		<div>
-			<p>第一個動態</p>
+			<%= change.obj_type %>
+			<%= change.message %>
 		</div>
 	<% end %>
 </div>
