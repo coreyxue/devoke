@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   include ChangelogHelper
   def index
     @posts = current_user.posts
+    render layout:false
   end
 
   def new
