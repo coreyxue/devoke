@@ -1,3 +1,59 @@
 // Place all the styles related to the Checkins controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.calendar{
+  background:white;
+  width:100%;
+  height:600px;
+  font-family:"Tahoma";
+}
+table{
+  padding-left:16%;
+}
+td{
+  width:88.5px;
+  height:50px;
+  .border-style: solid;
+  .border-width: 1px;
+  color:#494A4E;
+  font-size:20px;
+  text-align: center;
+}
+.finished_date{
+  width:33px;
+  height:33px;
+  background:#FF8060;
+  border-radius:100%;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  color:white;
+}
+.finished_date div{
+  color:white;
+  padding-top:4px;
+}
+.title{
+  height:130px;
+  width:735px;
+  color:#737C85;
+  font-size:24px;
+  margin-left:28%;
+}
+.month{
+  display: inline-block;
+  padding-top:60px;
+  margin-left:100px;
+  margin-right:100px;
+}
+.arrow {
+  width:33px;
+  height:33px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+.arrow div{
+  padding-left:7.5px;
+}

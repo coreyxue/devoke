@@ -29,6 +29,6 @@ class UserInformationController < ApplicationController
 
 	private
 	def user_information_params
-	    params.require(:user_information).permit(:name, :age, :gender)
+	    params.require(:user_information).permit(:name, :age, :gender, :avatar)
 	end
 end
