@@ -1,6 +1,16 @@
-<h2>Reward#index</h2>
-<% @rewards.each do |reward| %>
-	</br>
-	<%= link_to reward.name, reward_show_path(reward.id) %>
-	<%= reward.description %>
-<% end %>
+<div class="shop_header">
+	<div class="featured_item">
+		<%=image_tag "feature_item.jpg" %>
+	</div>
+</div>
+<div class="all_items">
+	<% @rewards.each do |reward| %>
+		<div class = "item">
+			<div class= "header">
+				<p class="name"><%= reward.name %></p>
+				<p class="price"><span class="cost"><%= reward.cost %></span></p>
+			</div>
+			<%= link_to(image_tag('reward_'+reward.id.to_s+'.jpg'), reward_show_path(reward.id)) %>
+		</div>
+	<% end %>
+</div>

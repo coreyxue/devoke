@@ -50,10 +50,14 @@ td{
 .arrow {
   width:33px;
   height:33px;
+  background:white;
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
 }
 .arrow div{
   padding-left:7.5px;
+}
+.cur_date{
+	display: none;
 }

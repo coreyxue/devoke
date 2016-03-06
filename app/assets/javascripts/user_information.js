@@ -16,6 +16,7 @@ jQuery(function($) {
 		  	}
       	});
 	})
+
 	calBut.on("click", function(){
 		content.html("home");
 		var today = new Date();
