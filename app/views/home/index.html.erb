@@ -1,0 +1,37 @@
+<!--%= image_tag "check.png", :id => "check"%-->
+<!--h2>整體狀態</h2>
+<div class="chart"></div>
+<h2>最新動態</h2>
+<div class="updates">
+	<% recent_changelogs(10).each do |change| %>
+		<div>
+			<%= change.obj_type %>
+			<%= change.message %>
+		</div>
+	<% end %>
+</div-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Devoke</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= image_tag "intro5.jpg", :id => "intro"%>
+<% if current_user %>
+	<p id="greeting"><%= current_user.user_information.name%>， 歡迎回來</p>
+	<h1>您今天靈修了嗎？</h1>
+	<div class="intro_but">
+		<%= link_to '完成', '#' %>
+	<div>
+	<%= link_to(image_tag("circle.png", :class => "circledown"), profile_path(current_user.id)) %>
+<% else %>
+	<h1>從今天起開始良好的靈修生活！</h1>
+	<div class="intro_but">
+		<%= link_to '開始', new_user_registration_path %>
+	<div>
+	<%= link_to '登入', new_user_session_path %>
+<% end %>
+</body>

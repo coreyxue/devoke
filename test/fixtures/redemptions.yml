@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  reward_id: 
+  time: 2016-02-12 18:41:41
+
+two:
+  user_id: 
+  reward_id: 
+  time: 2016-02-12 18:41:41

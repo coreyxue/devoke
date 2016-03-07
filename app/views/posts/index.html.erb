@@ -1,0 +1,22 @@
+<%= form_for :post, url: posts_path do |f| %>
+  <p>
+    <%= f.label :mood %><br>
+    <%= f.number_field :mood %>
+  </p>
+ 
+  <p>
+    <%= f.label :message %><br>
+    <%= f.text_area :message %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<% @posts.each do |post| %>
+</br>
+	<%= post.mood %>
+	<%= post.message %>
+	<%= link_to 'edit', edit_post_path(post) %>
+	<%= link_to 'delete', post_path(post), :method=>:delete %>
+<% end %>

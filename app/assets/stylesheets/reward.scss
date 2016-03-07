@@ -1,0 +1,73 @@
+// Place all the styles related to the reward controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.shop_header {
+	height:506px;
+	width:100%;
+}
+.all_items{
+	padding: 30px 0px 4px 0px;
+    overflow: hidden;
+    height: auto;
+    width: 945px;
+    margin: 0 auto 0;
+}
+.item {
+  display:inline-block;
+  width:452px;
+  height:364px;
+  font-size:18px;
+  margin-left:18px;
+  margin-top:20px;
+}
+.item .header{
+  background:#FAFAFA;
+  width:451px;
+  height:39px;
+  border-radius: 5px 5px 0 0;
+  border-bottom: none;
+  border: 1px solid #ddd;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+.name {
+  display: inline-block;
+}
+.price{
+  float:right;
+  display: inline-block;
+  height:39px;
+  width:49px;
+  background:#FAFAFA;
+  border: 1px solid #ddd;
+  z-index: 1;
+  margin-top:0px;
+  margin-bottom:0px;
+  border-bottom: none;
+  border-top: none;
+  border-right: none;
+  text-align: center;
+}
+.price .cost{
+  vertical-align:middle;
+}
+.item img{
+  width:452px;
+  height:325px;
+  border-radius: 0px 0px 5px 5px;
+}
+.item img:hover{
+  opacity:0.7;
+}
+.shop_header .featured_item{
+	height:156px;
+	width:920px;
+}
+.shop_header .featured_item img{
+    position: absolute;
+	width:2100px;
+	left: 50%;
+	margin-left: -1050px;
+	top:0px;
+	z-index:-1;
+}

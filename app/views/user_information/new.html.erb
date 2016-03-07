@@ -1,0 +1,19 @@
+<h1>Your Information</h1>
+<%= form_for :user_information, url: profile_create_path do |f| %>
+	<p>
+    	<%= f.label :name %><br>
+    	<%= f.text_field :name %>
+  	</p>
+  	<p>
+    	<%= f.label :age %><br>
+    	<%= f.number_field :age %>
+  	</p>
+    <p>
+      <%= f.label :gender %><br>
+      <%= f.text_field :gender %>
+    </p>
+  	<p>
+    	<%= f.submit %>
+  	</p>
+
+<% end %>

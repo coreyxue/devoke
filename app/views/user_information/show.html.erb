@@ -1,0 +1,55 @@
+<div class="intro-shelf">
+	<div class="user_information">
+		<% if @user_infor.avatar %>
+			<%= image_tag @user_infor.avatar.url(:medium), :class=>"head" %>
+		<% else %>
+		    <%= image_tag "fhead", :class=>"head" %>
+		<% end %>
+		<div class="name_credit">
+		<div class="user_name">
+		<%= @user_infor.name %></div>
+	</br>
+		您目前有
+		<div class="credit">
+		<%= @user_infor.credit %></div>
+		顆嗎那
+	</div>
+	<progress value="22" max="100"></progress>
+	<!--%= image_tag "dialog.png", :class=>"dialog"%-->
+	<div class="goal">
+		<%= link_to( image_tag("sun.png", :class=>"sun"), checkins_create_path, :method=>:post) %>
+	</div>
+    </div>
+</div>
+	<div id="plusOne">+1</div>
+</div>
+<div class="page_content">
+	<div class="bigBut" id="postBut">
+		<%= image_tag("post.png", :class => 'butImg') %>
+	</div>
+	<div class="bigBut" id="calBut">
+		<%= image_tag("cal.png", :class => 'butImg') %>
+	</div>
+	<div class="bigBut" id="mallBut">
+		<%= link_to(image_tag("mall.png", :class => 'butImg'), reward_index_path) %>
+	</div>
+	<div class="content">default content</div>
+</div>
+<% if not @user_infor.nil? %>
+	<p>Name: <%= @user_infor.name %></p>
+	<p>age: <%= @user_infor.age %></p>
+	<p>gender: <%= @user_infor.gender %></p>
+	<p>credit: <%= @user_infor.credit %></p>
+	<%= link_to 'Update your information', profile_edit_path%>
+<% else %>
+	<%= link_to 'Enter your information', profile_new_path%>
+<% end %>
+<%= link_to 'my check ins', checkins_index_path(Time.now.year, Time.now.month) %>
+<%= link_to 'check in', checkins_create_path, :method=>:post%>
+<%= link_to 'rewards', reward_index_path %>
+<%= link_to 'redeem history', redemption_history_path %>
+<%= link_to 'message', new_post_path %>
+<%= link_to 'posts', posts_path %>
+<%= link_to 'sign in', new_user_session_path %>
+<%= link_to 'sign out', destroy_user_session_path, :method=>:delete%>
+<%= flash[:notice] %>
