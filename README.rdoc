@@ -1,19 +1,26 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Devoke 是一个帮助基督徒做好每日灵修的网站。使用 Devoke 追踪每日灵修的情况， 或是分享灵修心得， 使更多弟兄姊妹得到鼓励和造就。每日不懈的读经祷告，还可以积攒分数，换取各样礼品。
 
-Things you may want to cover:
+Devoke 基于以下版本开发
+* Ruby version: ruby 2.0.0p648 (2015-12-16 revision 53162) [universal.x86_64-darwin15]
+* Rails version: Rails 4.2.3
+* Mysql Server version: 5.5.44
 
-* Ruby version
+安装：
+下载安装Ruby
+https://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p648.tar.gz
+安装Rails
+gem install rails
 
 * System dependencies
 
 * Configuration
 
-* Database creation
-
-* Database initialization
+* 数据库创建
+devoke$ rake db:create
+seeds.rb 数据包含兑换商店的物品实例, 可自行选择导入
+devoke$ rake db:setup
 
 * How to run the test suite
 

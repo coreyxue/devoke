@@ -1,0 +1,54 @@
+// Place all the styles related to the changelogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box {
+  width:95%;
+  height:250px;
+  background:#FFF;
+  margin:20px auto;
+}
+.log-item {
+  position: relative;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.log-item .log-head{
+  position:absolute;
+  height:100px;
+  width:100px;
+  margin-left:30px;
+  margin-top:30px;
+}
+
+.log-item .log-face{
+  position:absolute;
+  height:50px;
+  width:50px;
+  margin-left:55px;
+  margin-top:170px;
+}
+
+.log-item .log-content{
+  position:absolute;
+  height:200px;
+  width:100px;
+  margin-left:150px;
+  margin-top:30px;
+}
+
+.log-item .log-content .message{
+  margin-top:10px;
+  height:150px;
+  width:565px;
+  overflow:scroll;
+}
+
+.log-item .log-username{
+  position:absolute;
+  margin-left: 60px;
+  margin-top:130px;
+  font-size:15px;
+}

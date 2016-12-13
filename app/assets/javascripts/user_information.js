@@ -1,20 +1,40 @@
 jQuery(function($) {   
 	var postBut = $("#postBut");
 	var calBut = $("#calBut");
+	var feedBut = $("#feedBut");
 	var content = $(".content");
 	var bar = $(".bar");
+	var popup = $("#popup");
+	var closePopup = $("#popup .closeImg");
+	var post_contents = $("#popup .post-contents");
 	var remembered_date = new Date();
 
+	popup.hide();
+
+	feedBut.on("click", function(){
+		$.ajax({
+		  	type: "GET",
+		  	url: "/changelogs/index/0/50",
+		  	success: function(result){
+		  		content.html(result);
+		  	}
+      	});
+	})
+
 	postBut.on("click", function(){
-		content.html("home");
+		popup.fadeIn(300);
 		$.ajax({
 		  	type: "GET",
 		  	url: "/posts",
 		  	success: function(result){
 		  		console.log(result);
-		  		content.html(result);
+		  		post_contents.html(result);
 		  	}
       	});
+	})
+
+	closePopup.on("click", function(){
+		popup.hide();
 	})
 
 	calBut.on("click", function(){

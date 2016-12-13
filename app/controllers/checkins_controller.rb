@@ -1,7 +1,7 @@
 class CheckinsController < ApplicationController
   before_action :authenticate_user!
   include CheckinsHelper
-  include ChangelogHelper
+  include ChangelogsHelper
 
   def index
   	pre_month, current_month = get_month_date_range(params[:year], params[:month])

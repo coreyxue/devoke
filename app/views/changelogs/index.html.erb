@@ -1,0 +1,9 @@
+<% @logs.each do |log| %>
+<div class="box log-item">
+	<%= image_tag log.user.user_information.avatar.url(:medium), :class=>"log-head" %>
+	<%= link_to log.user.user_information.name, profile_path(current_user.id), :class=>"log-username" %>
+	<div class="log-content">
+		<%= log.message %>
+	</div>
+</div>
+<% end %>

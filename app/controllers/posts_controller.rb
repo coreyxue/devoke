@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  include ChangelogHelper
+  include ChangelogsHelper
   def index
-    @posts = current_user.posts
+    @posts = current_user.posts.reverse
     render layout:false
   end
 
@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     post = current_user.posts.create(post_params)
-    create_changelog(current_user.id, 'Post', post.id, "create")
+    create_changelog(current_user.id, 'Post', post.id, "\""+post_params['message']+"\"")
     redirect_to profile_path(current_user)
   end
 
