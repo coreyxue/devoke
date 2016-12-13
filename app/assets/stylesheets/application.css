@@ -51,9 +51,16 @@ body {
 	position: relative;
     padding-top: 40px;
     padding-bottom: 40px;
-    margin-top: 40px;
+    margin-top: auto;
     font-size: 12px;
     line-height: 1.5;
     color: #767676;
     border-top: 1px solid #eee;
+}
+
+#overlay {
+    background:rgba(0,0,0,0.3);
+    display:none;
+    width:100%; height:100%;
+    position:absolute; top:0; left:0; z-index:99998;
 }

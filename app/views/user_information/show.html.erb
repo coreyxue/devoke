@@ -1,3 +1,8 @@
+
+<div id="popup">
+	<%= image_tag("close.png", :class => 'closeImg') %>
+	<div class="post-contents"></div>
+</div>
 <div class="intro-shelf">
 	<div class="user_information">
 		<% if @user_infor.avatar %>
@@ -24,6 +29,9 @@
 	<div id="plusOne">+1</div>
 </div>
 <div class="page_content">
+	<div class="bigBut" id="feedBut">
+		<%= image_tag("feed.png", :class => 'butImg') %>
+	</div>
 	<div class="bigBut" id="postBut">
 		<%= image_tag("post.png", :class => 'butImg') %>
 	</div>
@@ -44,12 +52,8 @@
 <% else %>
 	<%= link_to 'Enter your information', profile_new_path%>
 <% end %>
-<%= link_to 'my check ins', checkins_index_path(Time.now.year, Time.now.month) %>
-<%= link_to 'check in', checkins_create_path, :method=>:post%>
-<%= link_to 'rewards', reward_index_path %>
 <%= link_to 'redeem history', redemption_history_path %>
 <%= link_to 'message', new_post_path %>
-<%= link_to 'posts', posts_path %>
 <%= link_to 'sign in', new_user_session_path %>
 <%= link_to 'sign out', destroy_user_session_path, :method=>:delete%>
 <%= flash[:notice] %>

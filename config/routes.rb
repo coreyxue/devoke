@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'changelogs/index/:offset/:limit', to: 'changelogs#index', as: 'changelogs_index'
+
   #resources :users do
   resources :posts
   #end

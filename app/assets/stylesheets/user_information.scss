@@ -17,20 +17,18 @@ display:none;
 }
 
 .bigBut .butImg{
-  height:160px;
-  width:160px;
+  height:100px;
+  width:100px;
   padding-left:15px;
 }
 .content {
   height:500px;
   width:100%;
   margin-top:100px;
-  border-style: solid;
-  border-width: 2px;
 }
 .bigBut {
-  height:180px;
-  width:180px;
+  height:130px;
+  width:130px;
   display:inline-block;
   background: #8add6d;
   background-image: -webkit-linear-gradient(top, #8add6d, #60b044);
@@ -49,7 +47,7 @@ display:none;
   font-size: 20px;
   padding: 40px;
   text-decoration: none;
-  margin-left:5%;
+  margin-left:2.5%;
   margin-top:50px;
 }
 
@@ -118,4 +116,27 @@ display:inline-block;
   height:300px;
   width:300px;
   border: 0.5px solid;
+}
+#popup{
+  position:fixed;
+  margin-top:80px;
+  margin-left:21%;
+  height:600px;
+  width:800px;
+  background:#F5ECEC;
+  z-index:1;
+  border-radius: 10px;
+}
+#popup .closeImg{
+  position:absolute;
+  margin-left:95%;
+  height:40px;
+}
+#popup .post-contents{
+  height:570px;
+  width:770px;
+  background:white;
+  margin-top:15px;
+  margin-left:15px;
+  overflow:scroll;
 }
