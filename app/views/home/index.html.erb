@@ -19,19 +19,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= image_tag "intro5.jpg", :id => "intro"%>
+<%= image_tag "intro.jpg", :id => "intro"%>
 <% if current_user %>
-	<p id="greeting"><%= current_user.user_information.name%>， 歡迎回來</p>
-	<h1>您今天靈修了嗎？</h1>
-	<div class="intro_but">
-		<%= link_to '完成', '#' %>
-	<div>
-	<%= link_to(image_tag("circle.png", :class => "circledown"), profile_path(current_user.id)) %>
+	<div class="button_area">
+		<div class="btn" id="finish">
+			<%= link_to 'Finished!', '#' %>
+		</div>
+		<div id = "welcome">
+			<% if current_user.user_information.avatar %>
+				<%= link_to(image_tag(current_user.user_information.avatar.url(:medium), :class=>"head"), profile_path(current_user)) %>
+			<% else %>
+			    <%= link_to(image_tag("fhead", :class=>"head"), profile_path(current_user)) %>
+			<% end %>
+			<p class="greeting"><%= current_user.user_information.name%>， welcome back!</p>
+		</div>
+	</div>
 <% else %>
-	<h1>從今天起開始良好的靈修生活！</h1>
-	<div class="intro_but">
-		<%= link_to '開始', new_user_registration_path %>
-	<div>
-	<%= link_to '登入', new_user_session_path %>
+    <div class="button_area">
+    	<div class="btn" id="signup">
+    		<%= link_to('Sign up', new_user_registration_path)%>
+    	</div>
+    	<div class="btn" id="signin">
+    		<%= link_to('Sign in', new_user_session_path)%>
+    	</div>
+	</div>
 <% end %>
 </body>
