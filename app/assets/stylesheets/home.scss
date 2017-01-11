@@ -48,3 +48,64 @@ h1{
 	margin-top:50%;
 	margin-left:49%;
 }
+.button_area{
+	height:400px;
+	margin-top:250px;
+	background-color:#D2CFCF;
+	opacity:0.7;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.btn{
+    height:30px;
+	width:100px;
+	display:inline;
+	margin-left:30%;
+	background: #34d981;
+	background-image: -webkit-linear-gradient(top, #34d981, #53b82b);
+	background-image: -moz-linear-gradient(top, #34d981, #53b82b);
+	background-image: -ms-linear-gradient(top, #34d981, #53b82b);
+	background-image: -o-linear-gradient(top, #34d981, #53b82b);
+	background-image: linear-gradient(to bottom, #34d981, #53b82b);
+	-webkit-border-radius: 11;
+	-moz-border-radius: 11;
+	border-radius: 11px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 25px;
+	padding: 23px 40px 23px 40px;
+	text-decoration: none;
+}
+#signup{
+	position:relative;
+	top:80px;
+}
+#signin{
+	position:relative;
+	top:150px;
+	margin-left:250px;
+}
+#finish{
+	position:relative;
+	top:80px;
+}
+
+.button_area a{
+	text-decoration:none;
+	color:#ffffff;
+}
+
+#welcome{
+	position:relative;
+	margin-left:900px;
+}
+
+.btn:hover {
+	background: #3cfc63;
+	background-image: -webkit-linear-gradient(top, #3cfc63, #55d934);
+	background-image: -moz-linear-gradient(top, #3cfc63, #55d934);
+	background-image: -ms-linear-gradient(top, #3cfc63, #55d934);
+	background-image: -o-linear-gradient(top, #3cfc63, #55d934);
+	background-image: linear-gradient(to bottom, #3cfc63, #55d934);
+	text-decoration: none;
+}
