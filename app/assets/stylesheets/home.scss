@@ -22,8 +22,9 @@
 	border-radius: 10px 10px 10px 10px;
 }
 .btn{
-    height:30px;
-	width:100px;
+    position:absolute;
+    height:6%;
+	width:7%;
 	display:inline;
 	margin-left:30%;
 	background: #34d981;
@@ -42,13 +43,11 @@
 	text-decoration: none;
 }
 #signup{
-	position:relative;
-	top:80px;
+	top:23%;
 }
 #signin{
-	position:relative;
-	top:150px;
-	margin-left:250px;
+	top:35%;
+	margin-left:55%;
 }
 #finish{
 	position:relative;
