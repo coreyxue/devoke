@@ -14,7 +14,9 @@
   z-index: -1;
 }
 .button_area{
-	height:400px;
+    position:absolute;
+	height:50%;
+	width:100%;
 	margin-top:16%;
 	background-color:rgba(210, 207, 207, 0.7);
 	border-radius: 10px 10px 10px 10px;
