@@ -1,11 +1,6 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#check{
-	display:none;
-	position: fixed;
-	margin-left: 82%;
-}
 #intro {
   position:fixed;
   top:0; 
@@ -18,44 +13,12 @@
   height:100%;
   z-index: -1;
 }
-.intro_but {
-	height:100px;
-	width:300px;
-    border-radius: 18px 18px 18px 18px;
-	-moz-border-radius: 18px 18px 18px 18px;
-	-webkit-border-radius: 18px 18px 18px 18px;
-	border: 8px solid #1ABC9C;
-	margin-left:38%;
-	margin-top:8%;
-	background-color:#1ABC9C;
-}
-.intro_but p{
-	font-size:60px;
-	color:white;
-	margin-left:70px;
-}
-#greeting{
-	color:white;
-	font-size:80px;
-}
-h1{
-	color:white;
-	font-size:80px;
-	margin-left:30%;
-	margin-top:8%;
-}
-.circledown{
-	margin-top:50%;
-	margin-left:49%;
-}
 .button_area{
 	height:400px;
-	margin-top:250px;
-	background-color:#D2CFCF;
-	opacity:0.7;
+	margin-top:16%;
+	background-color:rgba(210, 207, 207, 0.7);
 	border-radius: 10px 10px 10px 10px;
 }
-
 .btn{
     height:30px;
 	width:100px;
