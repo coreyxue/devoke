@@ -40,7 +40,7 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
