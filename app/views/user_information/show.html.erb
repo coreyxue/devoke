@@ -4,26 +4,26 @@
 	<div class="post-contents"></div>
 </div>
 <div class="intro-shelf">
-	<div class="user_information">
-		<% if @user_infor.avatar %>
-			<%= image_tag @user_infor.avatar.url(:medium), :class=>"head" %>
-		<% else %>
-		    <%= image_tag "fhead", :class=>"head" %>
+	<div class="user-profile">
+		<div id="user-information">
+			<% if @user_infor.avatar? %>
+				<%= image_tag @user_infor.avatar.url(:medium), :class=>"head" %>
+			<% else %>
+			    <%= image_tag "default-head.svg", :class=>"head" %>
+			<% end %>
+			<p><%= @user_infor.name %></p>
+			<p>Cridets:<%= @user_infor.credit %></p>
+		</div>
+		<div id="chart">
+
+		</div>
+		<% if not has_user_checked_in_today? current_user %>
+			<div id="done-btn">
+				<%= link_to "Warning: You have NOT checked in today, click here to checkin!", checkins_create_path, method: :post%>
+			</div>
 		<% end %>
-		<div class="name_credit">
-		<div class="user_name">
-		<%= @user_infor.name %></div>
-	</br>
-		您目前有
-		<div class="credit">
-		<%= @user_infor.credit %></div>
-		顆嗎那
 	</div>
-	<progress value="22" max="100"></progress>
 	<!--%= image_tag "dialog.png", :class=>"dialog"%-->
-	<div class="goal">
-		<%= link_to( image_tag("sun.png", :class=>"sun"), checkins_create_path, :method=>:post) %>
-	</div>
     </div>
 </div>
 	<div id="plusOne">+1</div>

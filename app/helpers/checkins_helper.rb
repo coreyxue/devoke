@@ -12,4 +12,7 @@ module CheckinsHelper
 	def get_beginning_wday(year, month)
 		return Date.civil(year.to_i, month.to_i, 1).wday
 	end
+	def has_user_checked_in_today?(user)
+		return user.checkins.find_by_date(Date.current)
+	end
 end
