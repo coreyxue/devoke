@@ -19,7 +19,7 @@ module CheckinsHelper
 		today = Date.today
 		date_data = {}
 		today.downto(today - 30).reverse_each {|d| date_data[d]=0}
-		date_count_from_db = Checkin.select("'date', count(*) as count").where("date in (?)", date_data.keys).group("'date'")
+		date_count_from_db = Checkin.select("'date', count(*) as count").where("date in (?)", date_data.keys).group("\"date\"")
 		date_count_from_db.each {|d| date_data[d.date] = d.count}
 		data = {
 			labels: date_data.keys,
