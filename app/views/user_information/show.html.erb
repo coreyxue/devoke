@@ -15,7 +15,7 @@
 			<p>Cridets:<%= @user_infor.credit %></p>
 		</div>
 		<div id="chart">
-
+		    <%= line_chart chart_data, chart_options%>
 		</div>
 		<% if not has_user_checked_in_today? current_user %>
 			<div id="done-btn">
