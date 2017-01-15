@@ -1,26 +1,30 @@
-<H1>Update Your Information</H1>
-    <div class="target"><%= image_tag @user_infor.avatar.url(:medium), :class=>"head" %></div>
+<%= image_tag "sign.jpg", :id => "intro"%>
+<div id="update-user-infor-area">
+    <div class="preview"><%= image_tag @user_infor.avatar.url(:medium), :class=>"head" %></div>
+    <div class="update-user-form">
+    <h3>Update your information</h3>
     <%= form_for @user_infor, url: profile_update_path,html: { multipart: true } , method: :patch do |f| %>
     <%= f.file_field :avatar %>
 	  <p>
     	<%= f.label :name %><br>
-    	<%= f.text_field :name %>
+    	<%= f.text_field :name, class: 'update-input', id: 'update-name'%>
   	</p>
 
   	<p>
     	<%= f.label :age %><br>
-    	<%= f.number_field :age %>
+    	<%= f.number_field :age, class: 'update-input', id: 'update-age'%>
   	</p>
 
     <p>
       <%= f.label :gender %><br>
-      <%= f.text_field :gender %>
+      <%= f.text_field :gender, class: 'update-input', id: 'update-gender'%>
     </p>
 
   	<p>
     	<%= f.submit %>
   	</p>
-
 <% end %>
 
 <%= link_to 'Back', profile_path(current_user) %>
+</div>
+</div>
