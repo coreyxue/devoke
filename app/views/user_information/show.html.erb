@@ -24,24 +24,31 @@
 		<% end %>
 	</div>
 	<!--%= image_tag "dialog.png", :class=>"dialog"%-->
-    </div>
-</div>
-	<div id="plusOne">+1</div>
 </div>
 <div class="page_content">
-	<div class="bigBut" id="feedBut">
-		<%= image_tag("feed.png", :class => 'butImg') %>
+	<div class="big-btn" id="feedBut">
+		<%= image_tag("feed.svg", :class => 'butImg') %>
 	</div>
-	<div class="bigBut" id="postBut">
-		<%= image_tag("post.png", :class => 'butImg') %>
+	<div class="big-btn" id="postBut">
+		<%= image_tag("share.svg", :class => 'butImg') %>
 	</div>
-	<div class="bigBut" id="calBut">
-		<%= image_tag("cal.png", :class => 'butImg') %>
+	<div class="big-btn" id="calBut">
+		<%= image_tag("calendar.svg", :class => 'butImg') %>
 	</div>
-	<div class="bigBut" id="mallBut">
-		<%= link_to(image_tag("mall.png", :class => 'butImg'), reward_index_path) %>
+	<div class="big-btn" id="mall-btn">
+		<%= link_to(image_tag("gift.svg", :class => 'butImg'), reward_index_path) %>
 	</div>
-	<div class="content">default content</div>
+	<div class="content">
+		<% recent_changelogs(50).each do |log| %>
+			<div class="box log-item">
+				<%= image_tag log.user.user_information.avatar.url(:medium), :class=>"log-head" %>
+				<%= link_to log.user.user_information.name, profile_path(current_user.id), :class=>"log-username" %>
+				<div class="log-content">
+					<%= log.message %>
+				</div>
+			</div>
+		<% end %>
+	</div>
 </div>
 <% if not @user_infor.nil? %>
 	<p>Name: <%= @user_infor.name %></p>

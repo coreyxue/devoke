@@ -4,34 +4,14 @@
 .header{
   visibility: initial;
 }
-#plusOne {
-display:none;
-  height:100px;
-  width:140px;
-  background-color:#47A9E8;
-  font-size:80px;
-  padding-left:60px;
-  margin-left:500px;
-  border-radius: 10px;
-}
-#plusOne:hover {
-  background-color:#347BA8;
-  color: #3AE80C;
-}
-
-.bigBut .butImg{
-  height:100px;
-  width:100px;
-  padding-left:15px;
-}
 .content {
-  height:500px;
   width:100%;
-  margin-top:100px;
+  margin-top:50px;
 }
-.bigBut {
+.big-btn {
   height:130px;
   width:130px;
+  position:relative;
   display:inline-block;
   background: #8add6d;
   background-image: -webkit-linear-gradient(top, #8add6d, #60b044);
@@ -50,11 +30,10 @@ display:none;
   font-size: 20px;
   padding: 40px;
   text-decoration: none;
-  margin-left:2.5%;
-  margin-top:50px;
+  margin-right:3.6%;
+  margin-top:2%;
 }
-
-.bigBut:hover {
+.big-btn:hover {
   background: #69d12c;
   background-image: -webkit-linear-gradient(top, #69d12c, #689e2b);
   background-image: -moz-linear-gradient(top, #69d12c, #689e2b);
@@ -62,6 +41,13 @@ display:none;
   background-image: -o-linear-gradient(top, #69d12c, #689e2b);
   background-image: linear-gradient(to bottom, #69d12c, #689e2b);
   text-decoration: none;
+}
+.big-btn .butImg{
+  height:100%;
+  width:100%;
+}
+#mall-btn{
+  margin-right:0;
 }
 .intro-shelf {
     position: relative;
