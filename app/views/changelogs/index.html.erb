@@ -3,7 +3,12 @@
 	<%= image_tag log.user.user_information.avatar.url(:medium), :class=>"log-head" %>
 	<%= link_to log.user.user_information.name, profile_path(current_user.id), :class=>"log-username" %>
 	<div class="log-content">
-		<%= log.message %>
+		<% if log.obj_type == 'Post'%>
+		<%= Post.find_by_id(log.obj_id).message %>
+		<% elsif log.obj_type == 'Checkin' %>
+		<% c = Checkin.find_by_id(log.obj_id) %>
+		Checked in at <%= c.date %> <%= c.time %>
+		<%end%>
 	</div>
 </div>
 <% end %>
