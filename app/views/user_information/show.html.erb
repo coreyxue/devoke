@@ -39,32 +39,28 @@
 	</div>
 	<div class="content">
 		<% recent_changelogs(50).each do |log| %>
-			<div class="box log-item">
-				<%= image_tag log.user.user_information.avatar.url(:medium), :class=>"log-head" %>
-				<%= link_to log.user.user_information.name, profile_path(current_user.id), :class=>"log-username" %>
-				<div class="log-content">
-					<% if log.obj_type == 'Post'%>
-						<%= Post.find_by_id(log.obj_id).message %>
-					<% elsif log.obj_type == 'Checkin' %>
-						<% c = Checkin.find_by_id(log.obj_id) %>
-						Checked in at <%= c.date %> <%= c.time %>
-					<%end%>
+			<!--TODO: bad code style, needs refactor-->
+			<% if log.obj_type == 'Post'%>
+				<div class="box post-item">
+					<%= image_tag current_user.user_information.avatar.url(:medium), :class=>"post-head" %>
+					<%= link_to current_user.user_information.name, profile_path(current_user.id), :class=>"post-username" %>
+					<% post = Post.find_by_id(log.obj_id) %>
+					<%= image_tag "mood"+post.mood.to_s+".png", :class=>"post-face" %>
+					<div class="post-content">
+						<p><%= post.message %></p>
+					</div>
 				</div>
-			</div>
+			<% elsif log.obj_type == 'Checkin' %>
+				<div class="checkin-item">
+					<%= image_tag("checkedin.svg", :class => 'checked-in-icon') %>
+					<div class="checkin-content">
+						<% c = Checkin.find_by_id(log.obj_id) %>
+						<%= link_to log.user.user_information.name, profile_path(current_user.id), :class=>"log-username" %>
+						has checked in at <%= c.date %> <%= c.time.in_time_zone('Pacific Time (US & Canada)') %>
+					</div>
+				</div>
+			<%end%>
 		<% end %>
 	</div>
 </div>
-<% if not @user_infor.nil? %>
-	<p>Name: <%= @user_infor.name %></p>
-	<p>age: <%= @user_infor.age %></p>
-	<p>gender: <%= @user_infor.gender %></p>
-	<p>credit: <%= @user_infor.credit %></p>
-	<%= link_to 'Update your information', profile_edit_path%>
-<% else %>
-	<%= link_to 'Enter your information', profile_new_path%>
-<% end %>
-<%= link_to 'redeem history', redemption_history_path %>
-<%= link_to 'message', new_post_path %>
-<%= link_to 'sign in', new_user_session_path %>
-<%= link_to 'sign out', destroy_user_session_path, :method=>:delete%>
 <%= flash[:notice] %>
