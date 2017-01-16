@@ -9,6 +9,6 @@ module ChangelogsHelper
 	end
 
 	def recent_changelogs(count)
-		@logs = Changelog.order('time desc').limit(count)
+		@logs = Changelog.where('display=true').order('time desc').limit(count)
 	end
 end
