@@ -57,7 +57,7 @@
 					<div class="checkin-content">
 						<% c = Checkin.find_by_id(log.obj_id) %>
 						<%= link_to user.name, profile_path(user.id), :class=>"log-username" %>
-						has checked in at <%= c.date %> <%= c.time.in_time_zone('Pacific Time (US & Canada)') %>
+						has checked in at <%= c.time.localtime.hour%>:<%=c.time.localtime.min.to_s%> <%= c.date %> 
 					</div>
 				</div>
 			<%end%>

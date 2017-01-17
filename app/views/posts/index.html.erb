@@ -1,4 +1,4 @@
-<div class="post-header">主恩相随，福杯满溢！</div>
+<div class="post-header">Post a sharing</div>
 <div class="post_form">
   <div class="face-selection">
     <input type="radio" name="mood" value="1" id="radio1">
@@ -19,7 +19,7 @@
   </div>
   <div id="submit-but">分享</div>
 </div>
-<div>我的分享</div>
+<div>My sharing</div>
 <% @posts.each do |post| %>
   <div class="box post-item">
   <%= image_tag current_user.user_information.avatar.url(:medium), :class=>"post-head" %>
