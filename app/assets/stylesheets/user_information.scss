@@ -160,24 +160,25 @@
 } 
 #popup{
   position:fixed;
-  margin-top:80px;
-  margin-left:21%;
-  height:600px;
-  width:800px;
-  background:#F5ECEC;
+  top:25%;
+  left: 30%;
+  height:55%;
+  width:42%;
+  background:rgba(0, 0, 0, 0.3);
   z-index:1;
-  border-radius: 10px;
 }
 #popup .closeImg{
   position:absolute;
-  margin-left:95%;
+  margin-left:92%;
   height:40px;
+  z-index:1;
 }
 #popup .post-contents{
-  height:570px;
-  width:770px;
+  position:relative;
+  height:97%;
+  width:97%;
   background:white;
-  margin-top:15px;
-  margin-left:15px;
+  margin:auto;
+  margin-top:1%;
   overflow:scroll;
 }

@@ -43,12 +43,17 @@
 			<% user = log.user.user_information %>
 			<% if log.obj_type == 'Post'%>
 				<div class="box post-item">
-					<%= image_tag user.avatar.url(:medium), :class=>"post-head" %>
-					<%= link_to user.name, profile_path(user.id), :class=>"post-username" %>
-					<% post = Post.find_by_id(log.obj_id) %>
-					<%= image_tag "mood"+post.mood.to_s+".png", :class=>"post-face" %>
+					<div class="post-left-side">
+						<%= image_tag user.avatar.url(:medium), :class=>"post-head" %>
+						<div class="post-username">
+							<%= link_to user.name, profile_path(user.id), :class=>"post-username" %>
+						</div>
+						<% post = Post.find_by_id(log.obj_id) %>
+						<%= image_tag "mood"+post.mood.to_s+".png", :class=>"post-face" %>
+					</div>
 					<div class="post-content">
-						<p><%= post.message %></p>
+						<p><%= post.updated_at %></p>
+						<p class="message"><%= post.message %></p>
 					</div>
 				</div>
 			<% elsif log.obj_type == 'Checkin' %>

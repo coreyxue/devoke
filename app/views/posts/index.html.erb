@@ -1,30 +1,38 @@
-<div class="post-header">Post a sharing</div>
+<!--div class="post-header">Post a sharing</div-->
 <div class="post_form">
   <div class="face-selection">
-    <input type="radio" name="mood" value="1" id="radio1">
-    <%= image_tag "mood1.png", :class=>"radio_image", :id=>"radio_image_1" %>
-    <input type="radio" name="mood" value="2" id="radio2">
-    <%= image_tag "mood2.png", :class=>"radio_image", :id=>"radio_image_2" %>
-    <input type="radio" name="mood" value="3" id="radio3">
-    <%= image_tag "mood3.png", :class=>"radio_image", :id=>"radio_image_3" %>
-    <input type="radio" name="mood" value="1" id="radio4">
-    <%= image_tag "mood4.png", :class=>"radio_image", :id=>"radio_image_4" %>
-    <input type="radio" name="mood" value="1" id="radio5">
-    <%= image_tag "mood5.png", :class=>"radio_image", :id=>"radio_image_5" %>
-    <input type="radio" name="mood" value="1" id="radio6">
-    <%= image_tag "mood6.png", :class=>"radio_image", :id=>"radio_image_6" %>
+    <div class="all-face-icons">
+      <input type="radio" name="mood" value="1" id="radio1">
+      <%= image_tag "mood1.png", :class=>"radio_image", :id=>"radio_image_1" %>
+      <input type="radio" name="mood" value="2" id="radio2">
+      <%= image_tag "mood2.png", :class=>"radio_image", :id=>"radio_image_2" %>
+      <input type="radio" name="mood" value="3" id="radio3">
+      <%= image_tag "mood3.png", :class=>"radio_image", :id=>"radio_image_3" %>
+      <input type="radio" name="mood" value="1" id="radio4">
+      <%= image_tag "mood4.png", :class=>"radio_image", :id=>"radio_image_4" %>
+      <input type="radio" name="mood" value="1" id="radio5">
+      <%= image_tag "mood5.png", :class=>"radio_image", :id=>"radio_image_5" %>
+      <input type="radio" name="mood" value="1" id="radio6">
+      <%= image_tag "mood6.png", :class=>"radio_image", :id=>"radio_image_6" %>
+    </div>
   </div>
   <div class="text-input">  
     <textarea></textarea>
   </div>
-  <div id="submit-but">分享</div>
+  <div id="submit-but"><p>Post!</p></div>
 </div>
-<div>My sharing</div>
+<div>My sharings</div>
+
 <% @posts.each do |post| %>
-  <div class="box post-item">
-  <%= image_tag current_user.user_information.avatar.url(:medium), :class=>"post-head" %>
-  <%= link_to current_user.user_information.name, profile_path(current_user.id), :class=>"post-username" %>
-  <%= image_tag "mood"+post.mood.to_s+".png", :class=>"post-face" %>
+<div class="my-posts">
+  <div class="box post-item", id="smaller-post-item">
+    <div class="post-left-side">
+      <%= image_tag current_user.user_information.avatar.url(:medium), :class=>"post-head" %>
+      <div class="post-username">
+        <%= link_to current_user.user_information.name, profile_path(current_user.id) %>
+      </div>
+      <%= image_tag "mood"+post.mood.to_s+".png", :class=>"post-face" %>
+    </div>
   <div class="post-content">
     <p><%= post.updated_at %></p>
     <p class="message"><%= post.message %></p>
@@ -32,4 +40,5 @@
     <%= link_to 'delete', post_path(post), :method=>:delete %>
   </div>
   </div>
+</div>
 <% end %>

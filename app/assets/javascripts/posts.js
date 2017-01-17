@@ -25,8 +25,10 @@ jQuery(function($) {
 
     radio_images[0].on("click", function() {
       radios[0].prop("checked", true);
-      radio_images[0].html("<%= image_tag 'mood1s.png' %>");
+      //TODO: find a better way to do this!!!
+      //radio_images[0].html("<%= image_tag 'mood1s.png' %>");
       //radio_images[0].attr('src', mood1sPath);
+      radio_images[0].attr('src', 'https://app.member.virginpulse.com/img/moodicons/mood1s.png');
       radio_images[1].attr('src', 'https://app.member.virginpulse.com/img/moodicons/mood2.png');
       radio_images[2].attr('src', 'https://app.member.virginpulse.com/img/moodicons/mood3.png');
       radio_images[3].attr('src', 'https://app.member.virginpulse.com/img/moodicons/mood4.png');
