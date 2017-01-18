@@ -79,7 +79,43 @@ body {
     color: #767676;
     border-top: 1px solid #eee;
 }
-
+.footer-icons{
+	position:relative;
+	width:700px;
+	margin:auto;
+}
+.footer-icon{
+	height: 45px;
+	width: 45px;
+}
+#rails-icon{
+	height:45px;
+	width:35px;
+}
+#chartjs-icon{
+	height:52px;
+	width:56px;
+}
+#paperclip-icon{
+	height:45px;
+	width:170px;
+}
+#s3-icon{
+	height:50px;
+	width:55px;
+}
+#heroku-icon{
+	height:50px;
+	width:52px;
+}
+#mysql-icon{
+	height:50px;
+	width:80px;
+}
+#pg-icon{
+	height:50px;
+	width:52px;
+}
 #overlay {
     background:rgba(0,0,0,0.3);
     display:none;

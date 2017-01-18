@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'icon.png' %>
 </head>
 <body>
 	<div id="overlay"></div>
@@ -22,7 +23,19 @@
 	</div>
 <%= yield %>
 	<div class="page_content">
-	<div class="footer"></div>
+	<div class="footer">
+		<div class="footer-icons">
+			<%= image_tag('icon.png', id: 'setting_btn', class: 'footer-icon') %>
+			is powered by
+			<%= link_to image_tag('rails-icon.png', id: 'rails-icon', class: 'footer-icon'), 'http://rubyonrails.org/' %>
+			<%= link_to image_tag('chartjs-icon.jpg', id: 'chartjs-icon', class: 'footer-icon'), 'http://www.chartjs.org/' %>
+			<%= link_to image_tag('paperclip-icon.png', id: 'paperclip-icon', class: 'footer-icon'), 'https://github.com/thoughtbot/paperclip' %>
+			<%= link_to image_tag('AmazonS3-icon.png', id: 's3-icon', class: 'footer-icon'), 'https://aws.amazon.com/s3/' %>
+			<%= link_to image_tag('heroku-icon.png', id: 'heroku-icon', class: 'footer-icon'), 'https://www.heroku.com/' %>
+			<%= link_to image_tag('mysql-icon.png', id: 'mysql-icon', class: 'footer-icon'), 'https://www.mysql.com/' %>
+			<%= link_to image_tag('pg-icon.png', id: 'pg-icon', class: 'footer-icon'), 'https://www.postgresql.org/' %>
+		</div>
+	</div>
 	</div>
 </body>
 </html>
