@@ -1,11 +1,13 @@
-<h1>Reward#show</h1>
 <% if @reward %>
-	<%= image_tag 'reward_'+@reward.id.to_s+'.jpg'%></br>
+	<div class="image-area">
+		<%= image_tag 'reward_'+@reward.id.to_s+'.jpg'%>
+	</div>
+	<div class="redeem-area">
 	<%= @reward.name %></br>
 	<%= @reward.description %></br>
 	<%= @reward.amount %></br>
 	<%= @reward.cost %></br>
 	<%= link_to 'redeem', create_redemption_path(@reward.id), :method=>:post %>
 <% else %>
-	獎品不存在
+	Reward does not exist!
 <% end %>
