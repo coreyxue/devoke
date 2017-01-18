@@ -1,13 +1,18 @@
-<% if @reward %>
-	<div class="image-area">
-		<%= image_tag 'reward_'+@reward.id.to_s+'.jpg'%>
+<div class = "page_content">
+	<div class="item-area">
+		<% if @reward %>
+				<div class="image-area">
+					<%= image_tag 'reward_'+@reward.id.to_s+'.jpg'%>
+				</div>
+				<div class="redeem-area">
+					<h2><%= @reward.name %></h2>
+					<div id = "item-description"><%= @reward.description %></div>
+					Amount: <%= @reward.amount %>
+					Cost: <%= @reward.cost %></br>
+					<%= link_to 'redeem', create_redemption_path(@reward.id), class: "session_btn", id: "redeem-btn",:method=>:post %>
+				</div>
+		<% else %>
+			Reward does not exist!
+		<% end %>
 	</div>
-	<div class="redeem-area">
-	<%= @reward.name %></br>
-	<%= @reward.description %></br>
-	<%= @reward.amount %></br>
-	<%= @reward.cost %></br>
-	<%= link_to 'redeem', create_redemption_path(@reward.id), :method=>:post %>
-<% else %>
-	Reward does not exist!
-<% end %>
+</div>
