@@ -1,4 +1,3 @@
-
 <div id="popup">
 	<%= image_tag("close.png", :class => 'closeImg') %>
 	<div class="post-contents"></div>
@@ -24,36 +23,50 @@
 		<% end %>
 	</div>
 	<!--%= image_tag "dialog.png", :class=>"dialog"%-->
-    </div>
-</div>
-	<div id="plusOne">+1</div>
 </div>
 <div class="page_content">
-	<div class="bigBut" id="feedBut">
-		<%= image_tag("feed.png", :class => 'butImg') %>
+	<div class="big-btn" id="feedBut">
+		<%= image_tag("feed.svg", :class => 'butImg') %>
 	</div>
-	<div class="bigBut" id="postBut">
-		<%= image_tag("post.png", :class => 'butImg') %>
+	<div class="big-btn" id="postBut">
+		<%= image_tag("share.svg", :class => 'butImg') %>
 	</div>
-	<div class="bigBut" id="calBut">
-		<%= image_tag("cal.png", :class => 'butImg') %>
+	<div class="big-btn" id="calBut">
+		<%= image_tag("calendar.svg", :class => 'butImg') %>
 	</div>
-	<div class="bigBut" id="mallBut">
-		<%= link_to(image_tag("mall.png", :class => 'butImg'), reward_index_path) %>
+	<div class="big-btn" id="mall-btn">
+		<%= link_to(image_tag("gift.svg", :class => 'butImg'), reward_index_path) %>
 	</div>
-	<div class="content">default content</div>
+	<div class="content">
+		<% recent_changelogs(50).each do |log| %>
+			<!--TODO: bad code style, needs refactor-->
+			<% user = log.user.user_information %>
+			<% if log.obj_type == 'Post'%>
+				<div class="box post-item">
+					<div class="post-left-side">
+						<%= image_tag user.avatar.url(:medium), :class=>"post-head" %>
+						<div class="post-username">
+							<%= link_to user.name, profile_path(user.id), :class=>"post-username" %>
+						</div>
+						<% post = Post.find_by_id(log.obj_id) %>
+						<%= image_tag "mood"+post.mood.to_s+".png", :class=>"post-face" %>
+					</div>
+					<div class="post-content">
+						<p><%= post.updated_at %></p>
+						<p class="message"><%= post.message %></p>
+					</div>
+				</div>
+			<% elsif log.obj_type == 'Checkin' %>
+				<div class="checkin-item">
+					<%= image_tag("checkedin.svg", :class => 'checked-in-icon') %>
+					<div class="checkin-content">
+						<% c = Checkin.find_by_id(log.obj_id) %>
+						<%= link_to user.name, profile_path(user.id), :class=>"log-username" %>
+						has checked in at <%= c.time.localtime.hour%>:<%=c.time.localtime.min.to_s%> <%= c.date %> 
+					</div>
+				</div>
+			<%end%>
+		<% end %>
+	</div>
 </div>
-<% if not @user_infor.nil? %>
-	<p>Name: <%= @user_infor.name %></p>
-	<p>age: <%= @user_infor.age %></p>
-	<p>gender: <%= @user_infor.gender %></p>
-	<p>credit: <%= @user_infor.credit %></p>
-	<%= link_to 'Update your information', profile_edit_path%>
-<% else %>
-	<%= link_to 'Enter your information', profile_new_path%>
-<% end %>
-<%= link_to 'redeem history', redemption_history_path %>
-<%= link_to 'message', new_post_path %>
-<%= link_to 'sign in', new_user_session_path %>
-<%= link_to 'sign out', destroy_user_session_path, :method=>:delete%>
 <%= flash[:notice] %>

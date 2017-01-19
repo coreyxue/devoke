@@ -19,39 +19,69 @@
 	width:100%;
 	margin-top:16%;
 	background-color:rgba(210, 207, 207, 0.7);
-	border-radius: 10px 10px 10px 10px;
+}
+.home-content{
+    position:relative;
+    width:50%;
+    height:95%;
+	margin:auto;
+	margin-top:20px;
+}
+.site-description{
+    display:inline-block;
+    position:relative;
+	width:60%;
+	height:100%;
+	top:0px;
+	float: left;
+	font-size:1.3em;
+	font-family:"Comic Sans MS", cursive;
+}
+.site-description h3{
+	margin-bottom:20px;
+}
+.site-description li{
+	margin-bottom:10px;
+}
+.btns
+{
+	position:relative;
+	display:inline-block;
+	height:100%;
+	width:39%;
+	margin-top:0px;
+	top:0px;
+	padding:auto;
 }
 .btn{
-    position:absolute;
-    height:6%;
-	width:7%;
-	display:inline;
-	margin-left:30%;
+    position:relative;
+    height:10%;
+	width:50%;
+	display:block;
 	background: #34d981;
 	background-image: -webkit-linear-gradient(top, #34d981, #53b82b);
 	background-image: -moz-linear-gradient(top, #34d981, #53b82b);
 	background-image: -ms-linear-gradient(top, #34d981, #53b82b);
 	background-image: -o-linear-gradient(top, #34d981, #53b82b);
 	background-image: linear-gradient(to bottom, #34d981, #53b82b);
-	-webkit-border-radius: 11;
-	-moz-border-radius: 11;
-	border-radius: 11px;
+	-webkit-border-radius: 4;
+	-moz-border-radius: 4;
+	border-radius: 4px;
 	font-family: Arial;
 	color: #ffffff;
-	font-size: 25px;
-	padding: 2% 2% 2% 3%;
+	font-size: 23px;
+	padding: 3% 2% 0% 2%;
 	text-decoration: none;
-}
-#signup{
-	top:23%;
-}
-#signin{
-	top:35%;
-	margin-left:55%;
+	text-align:center;
+	margin:auto;
+	margin-top:10%;
 }
 #finish{
 	position:relative;
-	top:80px;
+	width:40%;
+	padding: 2% 2% 2% 2%;
+	margin-top:8%;
+	height:5%;
 }
 
 .button_area a{
@@ -59,9 +89,36 @@
 	color:#ffffff;
 }
 
-#welcome{
+.welcome{
 	position:relative;
-	margin-left:900px;
+	width:20%;
+	height:50%;
+	top:0px;
+	margin:auto;
+}
+
+.welcome .head{
+	position:relative;
+	width:100%;
+	height:70%;
+	margin:auto;
+}
+
+.welcome p{
+	position:relative;
+	text-align:center;
+	font-size:23px;
+	font-style: bold;
+}
+
+#congrat{
+	margin-top:8%;
+}
+
+.home-content p{
+	position:relative;
+	text-align:center;
+	font-size:23px;
 }
 
 .btn:hover {

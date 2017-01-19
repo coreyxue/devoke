@@ -1,9 +1,29 @@
 <% @logs.each do |log| %>
-<div class="box log-item">
-	<%= image_tag log.user.user_information.avatar.url(:medium), :class=>"log-head" %>
-	<%= link_to log.user.user_information.name, profile_path(current_user.id), :class=>"log-username" %>
-	<div class="log-content">
-		<%= log.message %>
-	</div>
-</div>
+	<!--TODO: bad code style, needs refactor-->
+	<% user = log.user.user_information %>
+	<% if log.obj_type == 'Post'%>
+		<div class="box post-item">
+			<div class="post-left-side">
+				<%= image_tag user.avatar.url(:medium), :class=>"post-head" %>
+				<div class="post-username">
+					<%= link_to user.name, profile_path(user.id), :class=>"post-username" %>
+				</div>
+				<% post = Post.find_by_id(log.obj_id) %>
+				<%= image_tag "mood"+post.mood.to_s+".png", :class=>"post-face" %>
+			</div>
+			<div class="post-content">
+				<p><%= post.updated_at %></p>
+				<p class="message"><%= post.message %></p>
+			</div>
+		</div>
+	<% elsif log.obj_type == 'Checkin' %>
+		<div class="checkin-item">
+			<%= image_tag("checkedin.svg", :class => 'checked-in-icon') %>
+			<div class="checkin-content">
+				<% c = Checkin.find_by_id(log.obj_id) %>
+				<%= link_to user.name, profile_path(user.id), :class=>"log-username" %>
+				has checked in at <%= c.time.localtime.hour%>:<%=c.time.localtime.min.to_s%> <%= c.date %> 
+			</div>
+		</div>
+	<%end%>
 <% end %>

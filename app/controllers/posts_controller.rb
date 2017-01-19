@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     post = current_user.posts.create(post_params)
-    create_changelog(current_user.id, 'Post', post.id, "\""+post_params['message']+"\"")
+    create_changelog(current_user.id, 'Post', post.id, 1, true)
     redirect_to profile_path(current_user)
   end
 
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      create_changelog(current_user.id, 'Post', @post.id, "update")
+      create_changelog(current_user.id, 'Post', @post.id, 2, false)
       redirect_to profile_path(current_user)
     else
       render 'edit'
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    create_changelog(current_user.id, 'Post', @post.id, "destroy")
+    create_changelog(current_user.id, 'Post', @post.id, 3, false)
     redirect_to profile_path(current_user)
   end
 

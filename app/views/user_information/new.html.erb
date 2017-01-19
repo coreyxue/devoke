@@ -1,19 +1,17 @@
-<h1>Your Information</h1>
-<%= form_for :user_information, url: profile_create_path do |f| %>
-	<p>
-    	<%= f.label :name %><br>
-    	<%= f.text_field :name %>
-  	</p>
+<%= image_tag "sign.jpg", :id => "intro"%>
+<div class="session_area", id="user-infor-area">
+  <%= form_for :user_information, url: profile_create_path do |f| %>
   	<p>
-    	<%= f.label :age %><br>
-    	<%= f.number_field :age %>
-  	</p>
-    <p>
-      <%= f.label :gender %><br>
-      <%= f.text_field :gender %>
-    </p>
-  	<p>
-    	<%= f.submit %>
-  	</p>
-
-<% end %>
+      	<%= f.text_field :name, placeholder: "Name or What you wanna be called", class: 'session_input'%>
+    	</p>
+    	<p>
+      	<%= f.number_field :age, placeholder: "Age, if you wish to tell us :)", class: 'session_input'%>
+    	</p>
+      <p>
+        <%= f.text_field :gender, placeholder: "Gender (optional)", class: 'session_input'%>
+      </p>
+    	<p>
+      	<%= f.submit "Save", class: 'session_btn', id: 'save-user-infor'%>
+    	</p>
+  <% end %>
+</div>

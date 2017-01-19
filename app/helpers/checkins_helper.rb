@@ -36,7 +36,6 @@ module CheckinsHelper
 	def chart_options
 		options= {
 			responsive: true,
-			fontSize: 1,
 			maintainAspectRatio: false,
 			scaleFontColor: "rgba(220,220,220,0.5)",
 			scales: {
