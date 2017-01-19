@@ -60,7 +60,7 @@ jQuery(function($) {
    	    	var img = new Image();
    	    	console.log(file);
    	    	img.src = file.target.result;
-   	    	$('.target').html(img);
+   	    	$('.preview').html(img);
    	    }
    	    reader.readAsDataURL(image);
    	    console.log(files);

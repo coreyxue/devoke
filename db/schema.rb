@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302234137) do
+ActiveRecord::Schema.define(version: 20170116004111) do
 
   create_table "changelogs", force: :cascade do |t|
-    t.string   "obj_type",   limit: 255,   null: false
-    t.integer  "obj_id",     limit: 4,     null: false
-    t.datetime "time",                     null: false
-    t.text     "message",    limit: 65535, null: false
-    t.integer  "user_id",    limit: 4,     null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "obj_type",   limit: 255,                 null: false
+    t.integer  "obj_id",     limit: 4,                   null: false
+    t.datetime "time",                                   null: false
+    t.integer  "user_id",    limit: 4,                   null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.integer  "action",     limit: 4
+    t.boolean  "display",                default: false
   end
 
   add_index "changelogs", ["user_id"], name: "index_changelogs_on_user_id", using: :btree

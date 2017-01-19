@@ -22,8 +22,8 @@ class CheckinsController < ApplicationController
   	current_user.user_information.increment(:credit, by = 1)
   	current_user.user_information.save
     print checkin.id
-    create_changelog(current_user.id, 'Checkin', checkin.id, "checkin created")
+    create_changelog(current_user.id, 'Checkin', checkin.id, 1, true)
 
-  	redirect_to checkins_index_path Time.now.year, Time.now.month
+  	redirect_to profile_path current_user
   end
 end
