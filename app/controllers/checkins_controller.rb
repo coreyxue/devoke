@@ -24,6 +24,6 @@ class CheckinsController < ApplicationController
     print checkin.id
     create_changelog(current_user.id, 'Checkin', checkin.id, 1, true)
 
-  	redirect_to checkins_index_path Time.now.year, Time.now.month
+  	redirect_to profile_path current_user
   end
 end
