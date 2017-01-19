@@ -13,7 +13,7 @@
 	<!--%= link_to 'sign out', destroy_user_session_path, :method=>:delete%-->
 	<div class="header">
 		<div id="header_content">
-			<%= image_tag 'icon.png', :class => 'icon' %>
+			<%= link_to image_tag('icon.png', :class => 'icon'), profile_path(current_user) %>
 			<p class="header_verse">Then the Lord said to Moses, “I will rain down bread from heaven for you. The people are to go out each day and gather enough for that day. In this way I will test them and see whether they will follow my instructions. (Exodus 16:4)</p>
 		</div>
 		<% if current_user %>
