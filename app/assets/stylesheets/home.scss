@@ -19,14 +19,43 @@
 	width:100%;
 	margin-top:16%;
 	background-color:rgba(210, 207, 207, 0.7);
-	border-radius: 10px 10px 10px 10px;
+	border: 0.5px solid;
+}
+.home-content{
+    position:relative;
+    width:50%;
+    height:100%;
+	margin:auto;
+}
+.site-description{
+    display:inline-block;
+    position:relative;
+	width:60%;
+	height:100%;
+	top:0px;
+	float: left;
+}
+.site-description h3{
+	margin-bottom:20px;
+}
+.site-description p{
+	margin-bottom:10px;
+}
+.btns
+{
+	position:relative;
+	display:inline-block;
+	height:100%;
+	width:39%;
+	margin-top:0px;
+	top:0px;
+	padding:auto;
 }
 .btn{
-    position:absolute;
-    height:6%;
-	width:7%;
-	display:inline;
-	margin-left:30%;
+    position:relative;
+    height:20%;
+	width:70%;
+	display:block;
 	background: #34d981;
 	background-image: -webkit-linear-gradient(top, #34d981, #53b82b);
 	background-image: -moz-linear-gradient(top, #34d981, #53b82b);
@@ -38,16 +67,12 @@
 	border-radius: 11px;
 	font-family: Arial;
 	color: #ffffff;
-	font-size: 25px;
+	font-size: 50px;
 	padding: 2% 2% 2% 3%;
 	text-decoration: none;
-}
-#signup{
-	top:23%;
-}
-#signin{
-	top:35%;
-	margin-left:55%;
+	text-align:center;
+	margin:auto;
+	margin-top:10%;
 }
 #finish{
 	position:relative;
