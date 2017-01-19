@@ -1,5 +1,10 @@
 <div class="shop_header">
 	<!--div class="featured_item"></div-->
+	<div class="user-shopping-infor">
+		<p>Your available cridets: <%= current_user.user_information.credit %></p>
+		<%= link_to 'Redeem history', redemption_history_path(current_user), id: "redeem-history" %>
+		<%= link_to 'Back', profile_path(current_user), class: "session_btn", id: "shop-back-btn" %>
+	</div>
 		<%=image_tag "feature_item.jpg" %>
 </div>
 <div class="page_content">

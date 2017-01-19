@@ -6,11 +6,32 @@
 	height:40vh;
 	width:100%;
 }
+.user-shopping-infor {
+  position:absolute;
+  width:15%;
+  height:auto;
+  margin-left:65%;
+  margin-top:50px;
+  font-size:25px;
+  z-index:1;
+}
+#shop-back-btn {
+  padding-left:20px;
+  padding-right:20px;
+  font-size: 20px;
+  margin-left:0px;
+  left:0px;
+}
+#redeem-history{
+  font-size: 20px;
+  display:block;
+  left:0px;
+  margin-left:0px;
+}
 .shop_header img{
   position: absolute;
   width:100%;
   height:100%;
-
   margin:auto;
 }
 .all-items{
@@ -74,7 +95,6 @@
   margin-left:auto;
   margin-right:auto;
   margin-top:10%;
-  border: 0.5px solid;
 }
 
 .item-area .image-area{
@@ -92,12 +112,41 @@
 }
 
 .redeem-area{
-  position:relative;
-  width:38%;
+  height:50%;
+  position:absolute;
+  width:27%;
   display:inline-block;
-  
+  margin-left:2%;
+}
+#item-description{
+  position:relative;
+  height:60%;
+  overflow:scroll;
 }
 #redeem-btn{
   position:relative;
+  padding-left:20px;
+  padding-right:20px;
+}
+#back-btn{
+  position:relative;
+  padding-left:20px;
+  padding-right:20px;
+  margin-left:5%;
   width:100%;
+  background: #db6060;
+  background-image: -webkit-linear-gradient(top, #db6060, #b82b32);
+  background-image: -moz-linear-gradient(top, #db6060, #b82b32);
+  background-image: -ms-linear-gradient(top, #db6060, #b82b32);
+  background-image: -o-linear-gradient(top, #db6060, #b82b32);
+  background-image: linear-gradient(to bottom, #db6060, #b82b32);
+}
+#back-btn:hover {
+  background: #fc3c73;
+  background-image: -webkit-linear-gradient(top, #fc3c73, #eb1135);
+  background-image: -moz-linear-gradient(top, #fc3c73, #eb1135);
+  background-image: -ms-linear-gradient(top, #fc3c73, #eb1135);
+  background-image: -o-linear-gradient(top, #fc3c73, #eb1135);
+  background-image: linear-gradient(to bottom, #fc3c73, #eb1135);
+  text-decoration: none;
 }
