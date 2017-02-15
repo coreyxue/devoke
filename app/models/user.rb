@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :checkins, dependent: :destroy
   has_many :redemptions, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :changelogs
 end
